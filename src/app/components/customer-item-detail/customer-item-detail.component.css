@@ -1,0 +1,15 @@
+.heading{
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: -12px;
+}
+.bolder-font{
+        font-weight: bolder;
+}
+.bold-underline
+{
+ font-weight: bold;
+text-decoration: underline;
+}
+   

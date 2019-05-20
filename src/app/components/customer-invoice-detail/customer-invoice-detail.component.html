@@ -1,0 +1,68 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 body-title">Invoice Details</div>
+
+<div class="bodyWrapper">
+        <div class="fRight"><button type="button" class="btn btn-primary" (click)="print()">Print</button></div>
+    <div class="contentArea">
+        <app-invoice-header></app-invoice-header>
+        <app-customer-information></app-customer-information>
+        <app-customer-invoice-items></app-customer-invoice-items>
+
+        <div class="col-md-3 col-xs-12 col-sm-12 pL7">
+            <div class="smalltextheading">
+                <div class="totals-text p0">
+                    <strong>Totals</strong>
+                </div>
+            </div>
+            <div class="panel panel-default middlecontainer-half-left mL0 totals" style="width:100%;">
+                <div class="panel-body">
+                    <app-totals></app-totals>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 col-xs-12 col-sm-12 pL5">
+            <div class="col-md-6 pL5">
+                <strong>Deposits/Refund</strong>
+            </div>
+            <app-invoice-deposits></app-invoice-deposits>
+        </div>
+
+
+        <div class="col-md-3 col-xs-12 col-sm-12 pL7">
+            <div class="smalltextheading">
+                <div class="totals-text p0">
+                    <strong>Sales Person</strong>
+                </div>
+            </div>
+            <div class="panel panel-default middlecontainer-half-left mL0 totals" style="width:100%;">
+                <div class="panel-body">
+                    <app-sale-person></app-sale-person>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-7 col-xs-12 col-sm-12 pL5">
+            <div class="col-md-6 pL0">
+                <strong>Sales Order Comments</strong>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pL0 pR0">
+                <app-sale-order-comments></app-sale-order-comments>
+            </div>
+
+        </div>
+
+        <div class="col-md-5 col-xs-12 col-sm-12 pL0">
+            <div class="smalltextheading">
+                <div class="totals-text p0">
+                    <strong>Comments Detail</strong>
+                </div>
+            </div>
+            <div class="panel panel-default middlecontainer-half-left mL0 commentsdetail">
+                <div class="panel-body">
+                    <app-comments-detail></app-comments-detail>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

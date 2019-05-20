@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ticket Detail</title>
+  <base href="/">
+  <script>
+   var request = new XMLHttpRequest();
+   var baseHref = "/";
+   var config ;
+   if(window.location.href.split('/')[3] !== "login") {
+    request.open("GET", "./"+ window.location.href.split('/')[3]+"/assets/config/config.json", false);
+    request.send(null);
+    config = JSON.parse(request.responseText);
+    baseHref = config.href == "/" ? "/": "/" + config.href + "/";
+   }
+   document.getElementsByTagName("base")[0].setAttribute("href", baseHref);
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+</head>
+
+<body>
+    <div id="loader-overlay"  style="display:none">
+        <div><img id="loading" class="initial-loader"  src="./assets/spin.gif" /></div>
+      </div>
+  <app-root>Loading, please wait... <img id="loading" class="initial-loader"  src="./assets/spin.gif" /></app-root>
+</body>
+
+</html>

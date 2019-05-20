@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="center">
+        <img class="img-responsive loginImg" src="./assets/logo.png" alt="Chania">
+        <div id="ip" class="panel panel-info">
+            <div id="hp" class="panel-heading">
+                <strong><b>MEMBER LOGIN</b></strong>
+            </div>
+            <div id="ldp" class="panel-body">
+                <!-- <form>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="pwd" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form> -->
+                <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+                        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                            <label for="Email">Username</label>
+                            <input type="email" class="form-control" name="username" placeholder="Username" [(ngModel)]="model.username" #username="ngModel" required />
+                            <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+                        </div>
+                        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="model.password" #password="ngModel" required />
+                            <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+                        </div>
+                        <div class="form-group">
+                            <button [disabled]="loading" class="btn btn-primary btn-block">Login</button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>

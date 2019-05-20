@@ -1,0 +1,15 @@
+<div id="minheight" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div *ngIf="salePerson">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 textAlign">Sales Person 1</div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" *ngIf="salePerson && firstSalePerson">{{ salePerson.FullName }}</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 textAlign">Sales Person 2</div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" *ngIf="salePerson && secondSalePerson">{{ salePerson.FullName }}</div>
+        </div>
+    </div>
+    <div id="sp" class="list-group" *ngIf="!salePerson">
+        <strong>No Data Found</strong>
+    </div>
+</div>

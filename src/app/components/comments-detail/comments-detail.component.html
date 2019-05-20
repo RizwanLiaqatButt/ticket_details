@@ -1,0 +1,27 @@
+<ul class="list-group" *ngIf="saleOrderSelectedComment">
+    <li class="list-group-item row">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">ID</div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ saleOrderSelectedComment.ID }}</div>
+    </li>
+    <li class="list-group-item row">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Company Name</div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ saleOrderSelectedComment.CO_CD }}</div>
+    </li>
+    <li class="list-group-item row">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Del Doc Num</div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <strong>{{ saleOrderSelectedComment.DEL_DOC_NUM }}</strong>
+        </div>
+    </li>
+    <li class="list-group-item row">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Text</div>
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+            <p>
+                <strong>{{ saleOrderSelectedComment.TEXT }}</strong>
+            </p>
+        </div>
+    </li>
+</ul>
+<div id="cmnt" class="list-group" *ngIf="!saleOrderSelectedComment">
+    <Strong>No Data Found</Strong>
+</div>

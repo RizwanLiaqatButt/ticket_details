@@ -1,0 +1,14 @@
+<div class="middlecontainer-topactions">
+  <div class="fLeft">
+    <strong>Customer Comments</strong>
+  </div>
+</div>
+<div class=" panel panel-default middlecontainer">
+  <div class="panel-body" id="comsec">
+    
+    <ag-grid-angular style="width: 100%; height: 217px; text-align:left;" class="ag-bootstrap" [gridOptions]="gridOptions" [columnDefs]="columnDefs"
+    [rowData]="comments" [pagination]="false">
+  </ag-grid-angular>
+    
+  </div>
+</div>

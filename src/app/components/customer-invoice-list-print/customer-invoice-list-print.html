@@ -1,0 +1,15 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 body-title">Customer Invoice List</div>
+<div class="bodyWrapper">
+    <div class="">
+            <div class="fLeft">
+                    <strong>Customer Invoices</strong>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <ag-grid-angular class="ag-bootstrap" [gridOptions]="gridOptions" [columnDefs]="columnDefs"
+                                domLayout="forPrint"
+                                [rowData]="rowData">
+                            </ag-grid-angular>
+                </div>
+    </div>
+    <app-footer></app-footer>
+</div>

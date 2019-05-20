@@ -1,0 +1,46 @@
+export class STORES{
+    public	ID	:String;
+    public	SALESHIERARCHYID	:Number;
+    public	NAME	:String;
+    public	BRAND	:String;
+    public	SIGNAGETYPE	:String;
+    public	OPEN?:Date;
+    public	CLOSURE?:Date;
+    public	LATITUDE	:Number;
+    public	LONGITUDE	:Number;
+    public	CITY	:String;
+    public	STATECODE	:String;
+    public	ZIP	:String;
+    public	EMAIL	:String;
+    public	PHONE	:String;
+    public	RELOCATIONSTORE	:String;
+    public	STATUSCODE	:String;
+    public	SIZECODE	:String;
+    public	TRAFFICCOUNTERCODE	:String;
+    public	SQFT	:Number;
+    public	FAX	:String;
+    public	STOREACQUISITIONSELLER	:String;
+    public	STORECLEARANCEPAY	:String;
+    public	BUSINESSLINE	:String;
+    public	DMA	:String;
+    public	PAYPLAN	:String;
+    public	SERVICINGDC	:String;
+    public	SERVICINGDCNO	:String;
+    public	SOURCESYSTEMID	:Number;
+    public	SYS?:Date;MODIFIED	?:Date;
+    public	PARENTKEY	:String;
+    public	POSSYSTEM	:String;
+    public	TYPE	:String;
+    public	ENTITY	:String;
+    public	AREAMANAGER	:String;
+    public	AREAMANAGERCODE	:String;
+    public	MARKET	:String;
+    public	DISTRICT	:String;
+    public	SALESDIVISIONALVP	:String;
+    public	REGION	:String;
+    public	REGIONALVP	:String;
+    public	REGIONALSALESDIRECTOR	:String;
+    public	DISTRICTMANAGER	:String;
+    public	ADDRESS	:String;
+    
+}

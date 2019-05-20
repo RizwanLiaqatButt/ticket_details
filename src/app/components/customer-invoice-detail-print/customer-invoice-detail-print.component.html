@@ -1,0 +1,315 @@
+<style type="text/css" media="print">
+.contentArea {
+    width: 100% !important;
+    float: left;
+    margin: 0 !important;
+}
+
+ag-grid-angular{
+    padding: 0px !important;
+    border: 0px !important;
+    
+}
+
+.invoicedetailsGrid ag-grid-angular{
+    width: 99.8% !important;
+}
+
+.depositRefund ag-grid-angular{
+    width: 99.8% !important;
+}
+
+.invoicedetailsGrid .ag-bootstrap .ag-header-cell:nth-last-child(){
+    border-right: 0px !important;
+}
+
+.depositRefund .ag-bootstrap .ag-header-cell:nth-last-child(){
+    border-right: 0px !important;
+}
+
+.invoicedetailsGrid #grid_border {
+    border-radius: 0px !important;
+    border: 0px solid #b3b1b1 !important;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0) !important;
+    padding: 0px !important;
+    margin-top: 0px !important;
+}
+
+.depositRefund #grid_border {
+    border-radius: 0px !important;
+    border: 0px solid #b3b1b1 !important;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0) !important;
+    padding: 0px !important;
+    margin-top: 0px !important;
+}
+
+.contentArea .pL7{
+    padding-left: 0px !important;
+}
+
+.contentArea .middlecontainer-half-right{
+    max-height: 220px !important;
+}
+
+</style>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 body-title">Invoice Details</div>
+<div class="bodyWrapper">
+    <div class="contentArea">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pL5">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pL5">
+                        <strong>Invoice Header</strong>
+                    </div>
+                    <div class="panel panel-default middlecontainer-half-left myList">
+                        <div class="panel-body">
+                            <ul class="list-group" *ngIf="customerInformation">
+                                <li class="list-group-item row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Store</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{customerInformation.SO_STORE_CD}}</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Written Date</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{customerInformation.SO_WR_DT | momentDate}}</div>
+                                </li>
+                
+                                <li class="list-group-item row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Invoice No</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{customerInformation.DEL_DOC_NUM}}</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Finalized Date</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{customerInformation.FINAL_DT | momentDate}}</div>
+                
+                                </li>
+                
+                                <li class="list-group-item row">
+                
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Sales Ticket Number</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{customerInformation.DEL_DOC_NUM}}</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Delivery Date</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{customerInformation.PU_DEL_DT | momentDate}}</div>
+                                </li>
+                
+                                <li class="list-group-item row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Order Type</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{customerInformation.ORD_TP_CD}}</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Company</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{customerInformation.CO_CD}}</div>
+                                </li>
+                                <li class="list-group-item row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Status</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{customerInformation.STAT_CD}}</div>
+                                </li>
+                            </ul>
+                            <div id="ci" class="list-group"  *ngIf="!customerInformation">
+                                <Strong>No Data Found</Strong>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pL5">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pL6">
+                          <strong class="fullwidth fLeft">Customer Information</strong>
+                        </div>
+                      
+                        <div id="item_detail" class="panel panel-default middlecontainer-half-right">
+                          <div class="panel-body">
+                            <ul class="list-group" *ngIf="customerInformation">
+                              <li class="list-group-item row">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Customer No.</div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{ customerInformation.CUST_CD }}</div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">City</div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{ customerInformation.SHIP_TO_CITY }}</div>
+                              </li>
+                      
+                              <li class="list-group-item row">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Customer Name</div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ customerInformation.CUST_NAME }}</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 textAlign">State</div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{ customerInformation.SHIP_TO_ST_CD }}</div>
+                              </li>
+                      
+                              <li class="list-group-item row">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Home Phone</div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{ customerInformation.SHIP_TO_H_PHONE }}</div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Zip</div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{ customerInformation.SHIP_TO_ZIP_CD }}</div>
+                              </li>
+                      
+                              <li class="list-group-item row">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Work Phone</div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{ customerInformation.SHIP_TO_B_PHONE }}</div>
+                      
+                      
+                              </li>
+                      
+                              <li class="list-group-item row">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Address</div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                  <p>{{ customerInformation.SHIP_TO_ADDR1 }}</p>
+                                </div>
+                              </li>
+                      
+                            </ul>
+                            <div id="ci" class="list-group"  *ngIf="!customerInformation">
+                              <Strong>No Data Found</Strong>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pL5 invoicedetailsGrid">
+                            <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pL5">
+                                <strong>Invoice Detail</strong>
+                            </div> -->
+                            <ag-grid-angular id="grid_border" class="ag-bootstrap" 
+                            [gridOptions]="invoiceItemGridOptions" 
+                            [columnDefs]="invoiceItemColumnDefs" 
+                            [rowData]="invoiceItemGridData"
+                            domLayout="forPrint"
+                            [pinnedBottomRowData]="invoiceItemPinnedBottomRowData"
+                            [getRowStyle]="invoiceItemGetRowStyle"
+                            [frameworkComponents]="invoiceItemFrameworkComponents"
+                            (gridReady)="onInvoiceItemGridReady($event)">
+                            </ag-grid-angular>
+                        </div>
+
+        <div class="col-md-3 col-xs-12 col-sm-12 pL7">
+            <div class="smalltextheading">
+                <div class="totals-text p0">
+                    <strong>Totals</strong>
+                </div>
+            </div>
+            <div class="panel panel-default middlecontainer-half-left mL0 totals" style="width:100%;">
+                <div class="panel-body">
+                        <ul class="list-group" *ngIf="totals">
+                                <li class="list-group-item row">
+                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 textAlign">Net Value</div>
+                                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ totals.NetValue | currency }}</div>
+                                </li>
+                                <li class="list-group-item row">
+                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 textAlign">Setup Charge</div>
+                                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ totals.SETUP_CHG | currency }}</div>
+                                </li>
+                                <li class="list-group-item row">
+                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 textAlign">Delivery Charge</div>
+                                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ totals.DEL_CHG | currency }}</div>
+                                </li>
+                                <li class="list-group-item row">
+                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 textAlign">Tax Charge</div>
+                                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ totals.TAX_CHG | currency }}</div>
+                                </li>
+                                <li class="list-group-item row">
+                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 textAlign">Taxes</div>
+                                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ totals.Taxes | currency }}</div>
+                                </li>
+                                <li class="list-group-item row">
+                                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 textAlign">Total Ticket</div>
+                                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ totals.TotalTicket | currency }}</div>
+                                </li>
+                              </ul>
+                              <div class="list-group" id="sp" *ngIf="!totals">
+                                  <Strong>No Data Found</Strong>
+                              </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 col-xs-12 col-sm-12 pL5">
+            <div class="col-md-6 pL5">
+                <strong>Deposits/Refund</strong>
+            </div>
+            <div class="dep depositRefund">
+                    <ag-grid-angular id="grid_border" class="ag-bootstrap" 
+                    [gridOptions]="gridOptions" 
+                    [columnDefs]="columnDefs"
+                    [rowData]="gridData" 
+                    domLayout="forPrint"
+                    [pinnedBottomRowData]="pinnedBottomRowData"
+                    [getRowStyle]="getRowStyle"
+                    [frameworkComponents]="frameworkComponents"
+                    (gridReady)="onGridReady($event)">
+                    </ag-grid-angular>
+                </div>
+        </div>
+
+
+        <div class="col-md-3 col-xs-12 col-sm-12 pL7">
+            <div class="smalltextheading">
+                <div class="totals-text p0">
+                    <strong>Sales Person</strong>
+                </div>
+            </div>
+            <div class="panel panel-default middlecontainer-half-left mL0 totals" style="width:100%;">
+                <div class="panel-body">
+                        <div id="minheight" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div *ngIf="salePerson">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 textAlign">Sales Person 1</div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" *ngIf="salePerson && firstSalePerson">{{ salePerson.FullName }}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 textAlign">Sales Person 2</div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" *ngIf="salePerson && secondSalePerson">{{ salePerson.FullName }}</div>
+                                    </div>
+                                </div>
+                                <div id="sp" class="list-group" *ngIf="!salePerson">
+                                    <strong>No Data Found</strong>
+                                </div>
+                            </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-7 col-xs-12 col-sm-12 pL5">
+            <div class="col-md-6 pL0">
+                <strong>Sales Order Comments</strong>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pL0 pR0">
+                    <ag-grid-angular id="grid_border"  class="ag-bootstrap" 
+                    [gridOptions]="commentsGridOptions"
+                    [columnDefs]="commentsColumnDefs"
+                    domLayout="forPrint"
+                    [rowData]="commentsRowData">
+                    </ag-grid-angular>
+            </div>
+
+        </div>
+
+        <div class="col-md-5 col-xs-12 col-sm-12 pL0">
+            <div class="smalltextheading">
+                <div class="totals-text p0">
+                    <strong>Comments Detail</strong>
+                </div>
+            </div>
+            <div class="panel panel-default middlecontainer-half-left mL0 commentsdetail">
+                <div class="panel-body">
+                        <ul class="list-group" *ngIf="saleOrderSelectedComment">
+                                <li class="list-group-item row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">ID</div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ saleOrderSelectedComment.ID }}</div>
+                                </li>
+                                <li class="list-group-item row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Company Name</div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ saleOrderSelectedComment.CO_CD }}</div>
+                                </li>
+                                <li class="list-group-item row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Del Doc Num</div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <strong>{{ saleOrderSelectedComment.DEL_DOC_NUM }}</strong>
+                                    </div>
+                                </li>
+                                <li class="list-group-item row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Text</div>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                        <p>
+                                            <strong>{{ saleOrderSelectedComment.TEXT }}</strong>
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div id="cmnt" class="list-group" *ngIf="!saleOrderSelectedComment">
+                                <Strong>No Data Found</Strong>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

@@ -1,0 +1,49 @@
+<div class="middlecontainer-topactions">
+    <ul class="list-inline pull-right">
+      <li>
+        <a routerLink="/companyCodes" title="Companies Code">
+          <span class="glyphicon glyphicon-eye-open mR10"></span>Companies Code</a>
+      </li>
+    </ul>
+    <a href="#" class="fLeft">
+      <strong>Search Criteria</strong>
+  
+    </a>
+  </div>
+  <div class="panel panel-default middlecontainer">
+    <div class="panel-body">
+      <form class="form-inline">
+        <div class="form-group col-md-3 col-sm-3 col-xs-12 m0">
+          <div class="multiplecolsearch">
+            <label class="control-label" for="MultipleColSearch">Multiple Column Search *</label>
+          </div>
+          <div class="col-md-12 col-sm-12-col-xs-12 p0">
+            <input [ngModelOptions]="{standalone: true}" [(ngModel)]="userSearch.SearchText" type="text" class="form-control fullwidth" id="MultipleColSearch"
+            placeholder="">
+            <div class="searchError" *ngIf="isTextEmpty"><span>Please enter search text</span></div>
+          </div>
+        </div>
+        <div class="form-group col-md-2 col-sm-2 col-xs-12 m0">
+          <label class="control-label">Rows Displayed *</label>
+          <select class="form-control fLeft" id="RowsDisplay" [ngModelOptions]="{standalone: true}" [(ngModel)]="userSearch.RowsDisplayed" (ngModelChange)="onChange()">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+            <option value="100" selected>100</option>
+  
+          </select>
+        </div>
+        <div class="form-group col-md-3 col-sm-3 col-xs-12 m0">
+          <label class="control-label" for="Company">Company*</label>
+          <select class="form-control fLeft" id="exampleSelect1" [ngModelOptions]="{standalone: true}" [(ngModel)]="userSearch.CompanyCode" (ngModelChange)="onChange()">
+            <option *ngFor="let comp of companies " [value]="comp.CODE ">{{comp.CodeName}}</option>
+          </select>
+        </div>
+        <div class="form-group col-md-3 col-sm-3 col-xs-12 m0 mT25">
+          <button type="submit" class="btn btn-primary fLeft" (click)="onSearch()">Find Customer</button>
+        </div>
+        </form>
+    </div>
+  </div>

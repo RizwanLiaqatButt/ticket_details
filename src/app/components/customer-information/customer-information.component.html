@@ -1,0 +1,50 @@
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pL5">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pL6">
+    <strong class="fullwidth fLeft">Customer Information</strong>
+  </div>
+
+  <div id="item_detail" class="panel panel-default middlecontainer-half-right">
+    <div class="panel-body">
+      <ul class="list-group" *ngIf="customerInformation">
+        <li class="list-group-item row">
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Customer No.</div>
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{ customerInformation.CUST_CD }}</div>
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">City</div>
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{ customerInformation.SHIP_TO_CITY }}</div>
+        </li>
+
+        <li class="list-group-item row">
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Customer Name</div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ customerInformation.CUST_NAME }}</div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 textAlign">State</div>
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{ customerInformation.SHIP_TO_ST_CD }}</div>
+        </li>
+
+        <li class="list-group-item row">
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Home Phone</div>
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{ customerInformation.SHIP_TO_H_PHONE }}</div>
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Zip</div>
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{ customerInformation.SHIP_TO_ZIP_CD }}</div>
+        </li>
+
+        <li class="list-group-item row">
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Work Phone</div>
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{ customerInformation.SHIP_TO_B_PHONE }}</div>
+
+
+        </li>
+
+        <li class="list-group-item row">
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Address</div>
+          <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+            <p>{{ customerInformation.SHIP_TO_ADDR1 }}</p>
+          </div>
+        </li>
+
+      </ul>
+      <div id="ci" class="list-group"  *ngIf="!customerInformation">
+        <Strong>No Data Found</Strong>
+      </div>
+    </div>
+  </div>
+</div>

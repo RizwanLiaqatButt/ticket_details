@@ -1,0 +1,48 @@
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pL5">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pL5">
+        <strong>Invoice Header</strong>
+    </div>
+    <div class="panel panel-default middlecontainer-half-left myList">
+        <div class="panel-body">
+            <ul class="list-group" *ngIf="customerInformation">
+                <li class="list-group-item row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Store</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{customerInformation.SO_STORE_CD}}</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Written Date</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{customerInformation.SO_WR_DT | momentDate}}</div>
+                </li>
+
+                <li class="list-group-item row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Invoice No</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{customerInformation.DEL_DOC_NUM}}</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Finalized Date</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{customerInformation.FINAL_DT | momentDate}}</div>
+
+                </li>
+
+                <li class="list-group-item row">
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Sales Ticket Number</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{customerInformation.DEL_DOC_NUM}}</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Delivery Date</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{customerInformation.PU_DEL_DT | momentDate}}</div>
+                </li>
+
+                <li class="list-group-item row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Order Type</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{customerInformation.ORD_TP_CD}}</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Company</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{customerInformation.CO_CD}}</div>
+                </li>
+                <li class="list-group-item row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 textAlign">Status</div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{customerInformation.STAT_CD}}</div>
+                </li>
+            </ul>
+            <div id="ci" class="list-group"  *ngIf="!customerInformation">
+                <Strong>No Data Found</Strong>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,5 @@
+<ol class="breadcrumb">
+  <li *ngFor="let breadcrumb of allbreadcrumbs">
+    <a *ngIf="breadcrumb.label != ''" (click)="onClick(breadcrumb)" [routerLink]="[breadcrumb.url]">{{breadcrumb.label}}</a>
+  </li>
+</ol>

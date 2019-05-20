@@ -1,0 +1,13 @@
+<div class="fRight"><button type="button" class="btn btn-primary" (click)="print()">Print</button></div>
+<div class="fLeft">
+    <strong>Customer Invoices</strong>
+</div>
+<div class="col-md-12 p0">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <ag-grid-angular style="width: 100%; height: 350px;" class="ag-bootstrap" [gridOptions]="gridOptions" [columnDefs]="columnDefs"
+                [rowData]="rowData">
+            </ag-grid-angular>
+        </div>
+    </div>
+</div>

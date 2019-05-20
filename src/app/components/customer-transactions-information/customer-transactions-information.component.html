@@ -1,0 +1,96 @@
+<div class="fRight"><button type="button" class="btn btn-primary" (click)="print()">Print</button></div>
+<div class="middlecontainer-topactions">
+  <div class="fLeft">
+    <strong>Customer Informations</strong>
+  </div>
+</div>
+<div class=" panel panel-default middlecontainer">
+  <div class="panel-body">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-6 textAlign">
+          <label for="example-text-input" class="col-2 col-form-label">Customer Code</label>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6">
+          <input class="form-control" value="{{searchedSaleOrders[0].CUST_CD}}" type="text" disabled>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6 textAlign ">
+          <label for="example-text-input" class="col-2 col-form-label textAlign">First Name</label>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6">
+          <input class="form-control" value="{{searchedSaleOrders[0].SHIP_TO_F_NAME}}" type="text" disabled>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-6 textAlign">
+          <label for="example-text-input" class="col-2 col-form-label textAlign">Last Name</label>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6">
+          <input class="form-control" value="{{searchedSaleOrders[0].SHIP_TO_L_NAME}}" type="text" disabled>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6 textAlign">
+          <label for="example-text-input" class="col-2 col-form-label textAlign">Address 1#</label>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6">
+          <input class="form-control" value="{{searchedSaleOrders[0].SHIP_TO_ADDR1}}" type="text" disabled>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-6 textAlign">
+          <label for="example-text-input" class="col-2 col-form-label textAlign">Address 2#</label>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6">
+          <input class="form-control" value="{{searchedSaleOrders[0].SHIP_TO_ADDR2}}" type="text" disabled>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6 textAlign">
+          <label for="example-text-input" class="col-2 col-form-label textAlign">City</label>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6">
+          <input class="form-control" value="{{searchedSaleOrders[0].SHIP_TO_CITY}}" type="text" disabled>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-6 textAlign ">
+          <label for="example-text-input" class="col-2 col-form-label textAlign">St Code#</label>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6">
+          <input class="form-control" value="{{searchedSaleOrders[0].SHIP_TO_ST_CD}}" type="text" disabled>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6 textAlign">
+          <label for="example-text-input" class="col-2 col-form-label textAlign">Zip Code#</label>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6">
+          <input class="form-control" value="{{searchedSaleOrders[0].SHIP_TO_ZIP_CD}}" type="text" disabled>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-6 textAlign">
+          <label for="example-text-input" class="col-2 col-form-label textAlign">Home Phone#</label>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6">
+          <input class="form-control" value="{{searchedSaleOrders[0].SHIP_TO_H_PHONE}}" type="text" disabled>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6 textAlign">
+          <label for="example-text-input" class="col-2 col-form-label textAlign">Business Phone#</label>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6">
+          <input class="form-control" value="{{searchedSaleOrders[0].SHIP_TO_B_PHONE}}" type="text" disabled>
+        </div>
+
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-6 textAlign">
+          <label for="example-text-input" class="col-2 col-form-label textAlign">Compny Code</label>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6">
+          <input class="form-control" value="{{searchedSaleOrders[0].CO_CD}}" type="text" disabled>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<ul class="list-group" *ngIf="totals">
+  <li class="list-group-item row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 textAlign">Net Value</div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ totals.NetValue | currency }}</div>
+  </li>
+  <li class="list-group-item row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 textAlign">Setup Charge</div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ totals.SETUP_CHG | currency }}</div>
+  </li>
+  <li class="list-group-item row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 textAlign">Delivery Charge</div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ totals.DEL_CHG | currency }}</div>
+  </li>
+  <li class="list-group-item row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 textAlign">Tax Charge</div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ totals.TAX_CHG | currency }}</div>
+  </li>
+  <li class="list-group-item row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 textAlign">Taxes</div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ totals.Taxes | currency }}</div>
+  </li>
+  <li class="list-group-item row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 textAlign">Total Ticket</div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">{{ totals.TotalTicket | currency }}</div>
+  </li>
+</ul>
+<div class="list-group" id="sp" *ngIf="!totals">
+    <Strong>No Data Found</Strong>
+</div>

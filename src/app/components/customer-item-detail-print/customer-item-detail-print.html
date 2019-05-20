@@ -1,0 +1,340 @@
+<div class="col-md-12 col-sm-12 col-xs-12  body-title">
+  Detailed Analysis of Records
+</div>
+<div class="bodyWrapper">
+  <div class="col-lg-12" *ngFor="let item of pagedItems">
+    <div class="middlecontainer-topactions">
+      <div class="fLeft">
+        <strong>Item Details</strong>
+      </div>
+    </div>
+    <div id="items_detail" class=" panel panel-default middlecontainer">
+      <div class="panel-body">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 fLeft textAlign ">
+              Customer
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 bolder-font">
+              {{FullName}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 fLeft textAlign">
+              Del Doc Num
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 bolder-font">
+              {{delDocNumber}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 fLeft textAlign">
+              SKU #
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 bolder-font">
+              {{item.ITM_CD}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 fLeft textAlign">
+              Vendor Code
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 bolder-font">
+              {{item.VE_CD}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 fLeft textAlign">
+              VSN
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 bolder-font">
+              {{item.VSN}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 fLeft textAlign">
+              Description
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 bolder-font">
+              {{item.Description}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 fLeft textAlign">
+              Size
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 bolder-font">
+              {{item.SIZ}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 fLeft textAlign">
+              Finish
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 bolder-font">
+              {{ item.FINISH}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 fLeft textAlign">
+              Unit PRC
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 bolder-font">
+              {{item.UNIT_PRC | currency}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="middlecontainer-topactions">
+        <div class="fLeft">
+          <strong>Detail Sales Order Line</strong>
+        </div>
+      </div>
+      <div class=" panel panel-default middlecontainer">
+        <div class="panel-body">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft ">
+                <label for="example-text-input" class="col-2 col-form-label">COD Amount</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.COD_AMT}} " type="text">
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft ">
+                <label for="example-text-input" class="col-2 col-form-label">Treatment Refernece Ln/SKU</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.TREATED_BY_LN_NUM}}" type="text">
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft ">
+                <label for="example-text-input" class="col-2 col-form-label">Price Apprv</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.PRC_CHG_APP_CD}}" type="text">
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Warranty Refernece Ln/SKU</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.WARRANTED_BY_LN_NUM}}" type="text">
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Commision</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.COMM_CD}}" type="text" >
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Warranty Ref Serial#</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.REF_SER_NUM}}" type="text">
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">SPIFF Amount</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.SPIFF}}" type="text" >
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Serial#/Dye Lot</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.SER_NUM}}" type="text">
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">OOC Quantity</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.OOC_QTY}}" type="text" >
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">System ID</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" type="text">
+              </div>
+
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Out/NAS ID#</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.OUT_ID_CD}}" type="text">
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Unit Disc $</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.DISC_AMT}}" type="text">
+              </div>
+
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Out/NAS Code</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.OUT_CD}}" type="text">
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Active Dt</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.ACTIVATION_DT  | momentDate}}" type="text" >
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Ship Group</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.SHIP_GROUP}}" type="text">
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Fill Date</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.FILL_DT | momentDate}}" type="text" >
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Set Up Req</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.SET_UP}}" type="text">
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Lv in Carton</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.LV_IN_CARTON}}" type="text" >
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Set Up Commission</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.COMM_ON_SETUP_CHG}}" type="text">
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Del Commission</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.COMM_ON_DEL_CHG}}" type="text" >
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Slsp 1</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.SO_EMP_SLSP_CD1}}" type="text">
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Percent Of Sales 1</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.PCT_OF_SALE1}}" type="text" >
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Slsp 2</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.SO_EMP_SLSP_CD2}}" type="text">
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Percent Of Sales 2</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.PCT_OF_SALE2}}" type="text" >
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Tax Cd</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.TAX_CD}}" type="text">
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Basis</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.TAX_BASIS}}" type="text" >
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">TR</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.TAX_RESP}}" type="text" >
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Cust Tax</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.CUST_TAX_CHG}}" type="text">
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <label for="example-text-input" class="col-2 col-form-label">Store Tax</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.STORE_TAX_CHG}}" type="text" >
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft ">
+                <label for="example-text-input" class="col-2 col-form-label">PO Exist</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <input class="form-control" value="{{item.TAKEN_WITH}}" type="text" >
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft ">
+                <label for="example-text-input" class="col-2 col-form-label">Activation Phone#</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 fLeft">
+                <input class="form-control" value="{{item.ACTIVATION_PHONE}}" type="text">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

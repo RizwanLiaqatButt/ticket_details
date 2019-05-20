@@ -1,0 +1,27 @@
+<div id="top-nav" class="navbar-blue">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-toggle"></span>
+    </button>
+    <div class="logo">
+      <a href="./"><img  class="centerd" src="{{logoUrl}}"></a>
+      
+    </div>
+    <div class="navbar-brand mL30" href="#">MFRM Ticket Detail</div>
+  </div>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right navbar-white" *ngIf="isLoggedIn">
+      <li class="dropdown">
+        <a class="dropdown-toggle user-profile" role="button" data-toggle="dropdown" href="#">
+          <img class="img-responsive user-img" src="./assets/user-img.png"> {{currentUser}}
+          <span class="caret"></span>
+        </a>
+        <ul id="g-account-menu" class="dropdown-menu" role="menu">
+          <li>
+            <a (click)="logout()">Log Out</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
